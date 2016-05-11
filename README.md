@@ -49,9 +49,9 @@ To get started with this application on Heroku:
 **J Travis Lindsey**
 
 * <a href="http://jtlindsey.com/" target="_blank">jtlindsey.com</a>
-* <a href="https://github.com/jtlindsey" target="_blank">github.com/jtlindsey</a>
+* <a href="https://github.com/jtlindsey" target="_blank">jtlindsey github</a>
 
-This app was Inspired by <a href="https://github.com/formspree/formspree" target="_blank">github.com/formspree/formspree</a>
+This app was Inspired by <a href="https://github.com/formspree/formspree" target="_blank">formspree</a>
 
 ## License
 

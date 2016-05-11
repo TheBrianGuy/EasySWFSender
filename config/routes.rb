@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root 'pages#home'
   get    'signup'  => 'users#new'
-  resources :formroutes
-  resources :users
+  resources :formroutes, :users
+  resources :messages, :only => [:index, :show, :destroy]
 
   # Route with key
   match '/form/:key', to: 'formroutes#newhttp', via: [:get]

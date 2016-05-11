@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fwd msg to:</strong>
+  <%= @message.fwd_msg_to %>
+</p>
+
+<p>
+  <strong>Msg from site:</strong>
+  <%= @message.msg_from_site %>
+</p>
+
+<p>
+  <strong>Msg from email:</strong>
+  <%= @message.msg_from_email %>
+</p>
+
+<p>
+  <strong>Msg from name:</strong>
+  <%= @message.msg_from_name %>
+</p>
+
+<p>
+  <strong>Msg from ipaddress:</strong>
+  <%= @message.msg_from_ipaddress %>
+</p>
+
+<p>
+  <strong>Msg subject:</strong>
+  <%= @message.msg_subject %>
+</p>
+
+<p>
+  <strong>Msg:</strong>
+  <%= @message.msg %>
+</p>
+
+<%= link_to 'Back', messages_path %>

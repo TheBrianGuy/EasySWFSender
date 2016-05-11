@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fwd_msg_to: MyString
+  msg_from_site: MyString
+  msg_from_email: MyString
+  msg_from_name: MyString
+  msg_from_ipaddress: MyString
+  msg_subject: MyString
+  msg: MyText
+
+two:
+  fwd_msg_to: MyString
+  msg_from_site: MyString
+  msg_from_email: MyString
+  msg_from_name: MyString
+  msg_from_ipaddress: MyString
+  msg_subject: MyString
+  msg: MyText

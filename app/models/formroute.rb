@@ -22,12 +22,17 @@ class Formroute < ActiveRecord::Base
     formroute = Formroute.find_by(key: current_uri_key)
     if formroute != nil
       if emptyTag(params, request) == true && authenticateSource(formroute, request) == true    
+      # amessage = Message.create(
+        Message.create(
+          fwd_msg_to: formroute[:fwd_to_email], 
+          msg_from_site: request.referrer, 
+          msg_from_email: params["email"], 
+          msg_from_name: params["name"],
+          msg_from_ipaddress: request.remote_ip, 
+          msg_subject: params["_subject"], 
+          msg: params["message"])
 
-      puts "hello all good"
-      puts "The ip the message came from is #{request.remote_ip}"
-      # accept message and record in message table
       # then forward message to email associated with form
-      # note: add fwd_to_email column to formroute table
 
       end
     else

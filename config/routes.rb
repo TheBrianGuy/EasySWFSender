@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   resources :formroutes
   resources :users
 
-  
+  # Route with key
+  match '/form/:key', to: 'formroutes#newhttp', via: [:get]
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

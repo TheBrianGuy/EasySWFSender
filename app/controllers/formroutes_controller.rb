@@ -1,6 +1,11 @@
 class FormroutesController < ApplicationController
   before_action :set_formroute, only: [:show, :edit, :update, :destroy]
 
+  def newhttp
+    Formroute.authenticateMessage(request, params)
+    render nothing: true
+  end
+
   # GET /formroutes
   # GET /formroutes.json
   def index
@@ -69,6 +74,6 @@ class FormroutesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def formroute_params
-      params.require(:formroute).permit(:name, :key, :page, :user_id)
+      params.require(:formroute).permit(:name, :page)
     end
 end

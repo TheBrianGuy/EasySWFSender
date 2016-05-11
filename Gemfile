@@ -32,7 +32,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 
 #heroku dependency
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 
 # Use Unicorn as the app server
 # gem 'unicorn'

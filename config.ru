@@ -2,3 +2,6 @@
 
 require ::File.expand_path('../config/environment', __FILE__)
 run Rails.application
+
+# Writing to your log on heroku
+$stdout.sync = true

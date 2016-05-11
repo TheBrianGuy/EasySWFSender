@@ -12,7 +12,7 @@ Once you've got it up and running on your server, it's as easy as:
 2. Create a new formroute
 3. Then setup your form on your static website.  
 
-Example assuming your application is at `https://YourHerokuApp.com`, and your Formroute key is 123456.
+Example assuming your application is at `https://YourHerokuApp.com`, and your Formroute key is '123456'.
 
     <form action="https://YourHerokuApp.com/form/123456">
         <input type="text" name="name">
@@ -20,11 +20,13 @@ Example assuming your application is at `https://YourHerokuApp.com`, and your Fo
         <input type="submit" value="Send">
     </form>
 
-4. Whenever someone submits the form, the message will be recorded in your database and forwarded to you as an email.
+Whenever someone submits the form, the message will be recorded in your database and forwarded to you as an email.
 
 ## Features
 
-* Complete message privacy
+* Messages hosted on your server, manage your own database
+* Unlimited messages
+* Use with multiple static websites
 * Easily add and remove Formroutes
 * Easy to follow code for upgrading or customizing
 

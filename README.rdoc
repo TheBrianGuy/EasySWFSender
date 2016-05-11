@@ -1,28 +1,58 @@
-== README
+## Status
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+...in progress
 
-Things you may want to cover:
+## Overview
 
-* Ruby version
+Host your own form sender for all your static websites with EasyStaticWebsiteFormSender. Fork this app and upload to Heroku and you'll have a form sender that you can use with all your static websites. 
 
-* System dependencies
+Once you've got it up and running on your server, it's as easy as:
 
-* Configuration
+1. Sign into your application
+2. Create a new formroute
+3. Then setup your form on your static website.
+Example assuming your application is at https://YourHerokuApp.com, and your Formroute key is 123456:  
 
-* Database creation
+    <form action="https://YourHerokuApp.com/form/123456">
+        <input type="text" name="name">
+        <input type="email" name="_replyto">
+        <input type="submit" value="Send">
+    </form>
 
-* Database initialization
+4. Whenever someone submits the form, the message will be recorded in your database and forwarded to you as an email.
 
-* How to run the test suite
+## Features
 
-* Services (job queues, cache servers, search engines, etc.)
+* Complete message privacy
+* Easily add and remove Formroutes
+* Easy to follow code for upgrading or customizing
 
-* Deployment instructions
+## Pic's
 
-* ...
+...coming soon
 
+## Documentation & Usage
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+...coming soon
+
+## Installation
+
+To get started with this application on Heroku:
+
+```bash
+# 1. Comming soon
+
+```
+
+## Creators
+
+**J Travis Lindsey**
+
+* <a href="http://jtlindsey.com/" target="_blank">jtlindsey.com</a>
+* <a href="https://github.com/jtlindsey" target="_blank">github.com/jtlindsey</a>
+
+This app was Inspired by https://github.com/formspree/formspree
+
+## License
+
+[Click to read License information.](https://github.com/jtlindsey/EasyStaticWebsiteFormSender/blob/master/LICENSE "License")

@@ -32,6 +32,7 @@ class Formroute < ActiveRecord::Base
       end
     else
       puts "Bad Request, No Matching Formroute"
+      puts "The ip the message came from is #{request.remote_ip}"
     end
   end
 
@@ -42,6 +43,7 @@ class Formroute < ActiveRecord::Base
       puts "Bad match"
       puts "Came from: #{request.referrer}"
       puts "Expected: #{formroute.page}"
+      puts "The ip the message came from is #{request.remote_ip}"
     end
   end
 
@@ -50,6 +52,7 @@ class Formroute < ActiveRecord::Base
       true
     else
       puts "Bad params"
+      puts "The ip the message came from is #{request.remote_ip}"
     end
   end
 

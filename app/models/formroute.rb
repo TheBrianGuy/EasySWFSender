@@ -21,7 +21,7 @@ class Formroute < ActiveRecord::Base
     current_uri_key = request.env["action_dispatch.request.path_parameters"][:key]
     formroute = Formroute.find_by(key: current_uri_key)
     if formroute != nil
-      if emptyTag(params) == true && authenticateSource(formroute, request) == true    
+      if emptyTag(params, request) == true && authenticateSource(formroute, request) == true    
 
       puts "hello all good"
       puts "The ip the message came from is #{request.remote_ip}"
@@ -47,7 +47,7 @@ class Formroute < ActiveRecord::Base
     end
   end
 
-  def self.emptyTag(params)
+  def self.emptyTag(params, request)
     if params["_gotcha"].empty? == true
       true
     else

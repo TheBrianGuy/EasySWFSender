@@ -42,9 +42,18 @@ Whenever someone submits the form, the message will be recorded in your database
 
 To get started with this application on Heroku:
 
-```bash
-# 1. Comming soon
+....needs to be updated
 
+```bash
+# 1. Fork this project and clone into project directory on your local machine
+# 2. Setup [Heroku toolbelt](https://toolbelt.heroku.com/)
+# 3. From your project directory, create an app on heroku for your project
+heroku apps:create YourProjectName
+# 4. Push your project to heroku
+git push heroku
+# 5. Run migrations for the postgresql database
+heroku run rake db:migrate
+# 6. Your app should now be running at `https://YourProjectName.herokuapp.com/`
 ```
 
 ## Creators

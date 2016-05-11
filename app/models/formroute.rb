@@ -24,6 +24,7 @@ class Formroute < ActiveRecord::Base
       if emptyTag(params) == true && authenticateSource(formroute, request) == true    
 
       puts "hello all good"
+      puts "The ip the message came from is #{request.remote_ip}"
       # accept message and record in message table
       # then forward message to email associated with form
       # note: add email column to formroute table

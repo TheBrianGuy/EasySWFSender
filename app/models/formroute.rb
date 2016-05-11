@@ -27,7 +27,7 @@ class Formroute < ActiveRecord::Base
       puts "The ip the message came from is #{request.remote_ip}"
       # accept message and record in message table
       # then forward message to email associated with form
-      # note: add email column to formroute table
+      # note: add fwd_to_email column to formroute table
 
       end
     else

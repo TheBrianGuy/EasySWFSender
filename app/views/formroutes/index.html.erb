@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%#= notice %></p> -->
 
 <h1>Listing Formroutes</h1>
 
@@ -8,6 +8,7 @@
       <th>Name</th>
       <th>Key</th>
       <th>Page</th>
+      <th>Fwd-To-Email</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
         <td><%= formroute.name %></td>
         <td><%= formroute.key %></td>
         <td><%= formroute.page %></td>
+        <td><%= formroute.fwd_to_email %></td>
         <td><%= link_to 'Show', formroute %></td>
         <td><%= link_to 'Edit', edit_formroute_path(formroute) %></td>
         <td><%= link_to 'Destroy', formroute, method: :delete, data: { confirm: 'Are you sure?' } %></td>

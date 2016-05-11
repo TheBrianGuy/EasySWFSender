@@ -74,6 +74,6 @@ class FormroutesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def formroute_params
-      params.require(:formroute).permit(:name, :page)
+      params.require(:formroute).permit(:name, :page, :fwd_to_email)
     end
 end

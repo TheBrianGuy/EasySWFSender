@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%#= notice %></p> -->
 
 <p>
   <strong>Name:</strong>
@@ -13,6 +13,11 @@
 <p>
   <strong>Page:</strong>
   <%= @formroute.page %>
+</p>
+
+<p>
+  <strong>Fwd-To-Email:</strong>
+  <%= @formroute.fwd_to_email %>
 </p>
 
 <%= link_to 'Edit', edit_formroute_path(@formroute) %> |

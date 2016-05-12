@@ -54,5 +54,6 @@ Rails.application.configure do
     user_name:            ENV['EMAIL_USERNAME'],
     password:             ENV['EMAIL_PASSWORD'],
     authentication:       ENV['EMAIL_AUTHENTICATION'],
-    enable_starttls_auto: true  }
+    enable_starttls_auto: true,
+    tls:                  true  }
 end

@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# Shim to load environment variables from .env into ENV in development.
+gem 'dotenv-rails', :groups => [:development, :test]
+
 gem 'bootstrap-sass', '~> 3.3.5'
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'

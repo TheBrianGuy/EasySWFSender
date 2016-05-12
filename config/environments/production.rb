@@ -80,5 +80,5 @@ Rails.application.configure do
   # Mail info for production
   config.action_mailer.default_url_options = { host: ENV['EMAIL_HOST'] }
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = { port: 587 }
+  config.action_mailer.smtp_settings = { port: 80 }
 end

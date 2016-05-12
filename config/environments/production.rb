@@ -88,5 +88,6 @@ Rails.application.configure do
     password:             ENV['EMAIL_PASSWORD'],
     authentication:       ENV['EMAIL_AUTHENTICATION'],
     enable_starttls_auto: true,
-    tls:                  true  }
+    tls:                  true,
+    openssl_verify_mode:  'none' }
 end

@@ -62,6 +62,7 @@ Your configuration will depend on your email host. Check out the Action Mailer C
 
 1. Create a .env file in your root directory
 2. Add .env to your .gitignore
+3. Add your configurations to your .env
 
     ### Exmaple .env
 
@@ -75,11 +76,11 @@ Your configuration will depend on your email host. Check out the Action Mailer C
     EMAIL_AUTHENTICATION=plain
     ```
 
-3. Create the above variables in your heroku Config Variables.
+4. Create the above variables in your heroku Config Variables.
 
-4. Update your `developmenet.rb` and `production.rb` files:
+5. Update your `developmenet.rb` and `production.rb` files:
 
-### Example `development.rb`:
+    ### Example `development.rb`:
 
     ```bash
     ...
@@ -104,24 +105,24 @@ Your configuration will depend on your email host. Check out the Action Mailer C
     ```
 
 
-### Example `production.rb`:
+    ### Example `production.rb`:
 
-```bash
-...
-  # Mail info for production
-  config.action_mailer.default_url_options = { host: ENV['EMAIL_HOST'] }
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address:              ENV['EMAIL_ADDRESS'],
-    port:                 25,
-    domain:               ENV['EMAIL_DOMAIN'],
-    user_name:            ENV['EMAIL_USERNAME'],
-    password:             ENV['EMAIL_PASSWORD'],
-    authentication:       ENV['EMAIL_AUTHENTICATION'],
-    enable_starttls_auto: true,
-    tls:                  true }
-...
-```
+    ```bash
+    ...
+      # Mail info for production
+      config.action_mailer.default_url_options = { host: ENV['EMAIL_HOST'] }
+      config.action_mailer.delivery_method = :smtp
+      config.action_mailer.smtp_settings = {
+        address:              ENV['EMAIL_ADDRESS'],
+        port:                 25,
+        domain:               ENV['EMAIL_DOMAIN'],
+        user_name:            ENV['EMAIL_USERNAME'],
+        password:             ENV['EMAIL_PASSWORD'],
+        authentication:       ENV['EMAIL_AUTHENTICATION'],
+        enable_starttls_auto: true,
+        tls:                  true }
+    ...
+    ```
 
 ## Creators
 

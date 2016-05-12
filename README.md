@@ -56,6 +56,72 @@ heroku run rake db:migrate
 # 6. Your app should now be running at `https://YourProjectName.herokuapp.com/`
 ```
 
+## Configuration local machine and heroku
+
+Your configuration will depend on your email host. Check out the Action Mailer Configuration section at http://guides.rubyonrails.org/action_mailer_basics.html and your email providers documentation for more information.
+
+1. Create a .env file in your root directory
+2. Add .env to your .gitignore
+
+### Exmaple .env
+
+```bash
+# For Email Message
+EMAIL_HOST="example.com"
+EMAIL_ADDRESS="smtp.email.com"
+EMAIL_DOMAIN="example.com"
+EMAIL_USERNAME="username"
+EMAIL_PASSWORD="password"
+EMAIL_AUTHENTICATION=plain
+```
+
+3. Create the above variables in your heroku Config Variables.
+
+4. Update your `developmenet.rb` and `production.rb` files:
+
+### Example `development.rb`:
+
+```bash
+...
+  # Mail logging and other settings
+  config.action_mailer.default_url_options = { :host => "localhost:3000" }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+
+  # Email Message
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              ENV['EMAIL_ADDRESS'],
+    port:                 80,
+    domain:               ENV['EMAIL_DOMAIN'],
+    user_name:            ENV['EMAIL_USERNAME'],
+    password:             ENV['EMAIL_PASSWORD'],
+    authentication:       ENV['EMAIL_AUTHENTICATION'],
+    enable_starttls_auto: true,
+    tls:                  true }
+...
+```
+
+### Example `production.rb`:
+
+```bash
+...
+  # Mail info for production
+  config.action_mailer.default_url_options = { host: ENV['EMAIL_HOST'] }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              ENV['EMAIL_ADDRESS'],
+    port:                 25,
+    domain:               ENV['EMAIL_DOMAIN'],
+    user_name:            ENV['EMAIL_USERNAME'],
+    password:             ENV['EMAIL_PASSWORD'],
+    authentication:       ENV['EMAIL_AUTHENTICATION'],
+    enable_starttls_auto: true,
+    tls:                  true }
+...
+```
+
 ## Creators
 
 **J Travis Lindsey**

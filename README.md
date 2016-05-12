@@ -56,7 +56,7 @@ heroku run rake db:migrate
 # 6. Your app should now be running at `https://YourProjectName.herokuapp.com/`
 ```
 
-## Configuration local machine and heroku
+## Configuration Local Machine and Heroku
 
 Your configuration will depend on your email host. Check out the Action Mailer Configuration section at http://guides.rubyonrails.org/action_mailer_basics.html and your email providers documentation for more information.
 

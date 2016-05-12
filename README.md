@@ -64,7 +64,7 @@ Your configuration will depend on your email host. Check out the Action Mailer C
 2. Add .env to your .gitignore
 3. Add your configurations to your .env
 
-    ### Exmaple .env
+    ### Exmaple `.env`
 
     ```bash
     # For Email Message

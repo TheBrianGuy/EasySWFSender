@@ -12,11 +12,12 @@
 
   <%= render 'layouts/header' %>
 
-  <% flash.each do |message_type, message| %>
-    <div class="alert alert-<%= message_type %>"><%= message %></div>
-  <% end %>
+  <div class="container style1">
 
-  <div class="container-fluid">
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
+
    <%= yield %>
   </div>
 
@@ -25,9 +26,10 @@
 
 </body>
 <script type="text/javascript">
-// Highlight active link in navigation
   $(document).ready(function () {
-        $('a[href="' + this.location.pathname + '"]').parent().addClass('active');
-    });
+    // Highlight active link in navigation
+    $('a[href="' + this.location.pathname + '"]').parent().addClass('active');
+
+  });
 </script>
 </html>

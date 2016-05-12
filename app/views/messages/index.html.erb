@@ -1,8 +1,10 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%#= notice %></p> -->
+
+<div class="container style2">
 
 <h1>Listing Messages</h1>
 
-<table>
+<table class="table table-striped table-hover">
   <thead>
     <tr>
       <th>Fwd msg to</th>
@@ -19,16 +21,17 @@
   <tbody>
     <% @messages.each do |message| %>
       <tr>
-        <td><%= message.fwd_msg_to %></td>
-        <td><%= message.msg_from_site %></td>
-        <td><%= message.msg_from_email %></td>
-        <td><%= message.msg_from_name %></td>
-        <td><%= message.msg_from_ipaddress %></td>
-        <td><%= message.msg_subject %></td>
+        <td><%= link_to "#{message.fwd_msg_to}", message %></td>
+        <td><%= link_to "#{message.msg_from_site}", message %></td>
+        <td><%= link_to "#{message.msg_from_email}", message %></td>
+        <td><%= link_to "#{message.msg_from_name}", message %></td>
+        <td><%= link_to "#{message.msg_from_ipaddress}", message %></td>
+        <td><%= link_to "#{message.msg_subject}", message %></td>
         <td><%= message.msg %></td>
-        <td><%= link_to 'Show', message %></td>
         <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+</div>

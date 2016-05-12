@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%#= notice %></p> -->
+
+<div class="container style2">
 
 <p>
   <strong>Fwd msg to:</strong>
@@ -35,4 +37,6 @@
   <%= @message.msg %>
 </p>
 
-<%= link_to 'Back', messages_path %>
+<%= button_to('Back', messages_path, method: :get, :class => 'btn btn-default')  %>
+
+</div>

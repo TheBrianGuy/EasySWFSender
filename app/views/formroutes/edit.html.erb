@@ -1,6 +1,12 @@
+<div class="container style2">
+
 <h1>Editing Formroute</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @formroute %> |
-<%= link_to 'Back', formroutes_path %>
+<div>
+  <%= button_to('Show', @formroute, method: :get, :class => 'btn btn-default', form: {style: "display:inline-block"})  %> | 
+  <%= button_to('Back', formroutes_path, method: :get, :class => 'btn btn-default', form: {style: "display:inline-block"})  %>
+</div>
+
+</div>

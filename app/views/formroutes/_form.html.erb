@@ -11,19 +11,21 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :page %><br>
-    <%= f.text_field :page %>
-  </div>
-  <div class="field">
-    <%= f.label :fwd_to_email %><br>
-    <%= f.text_field :fwd_to_email %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <form role="form">
+    <div class="field form-group">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field form-group">
+      <%= f.label :page %><br>
+      <%= f.text_field :page %>
+    </div>
+    <div class="field form-group">
+      <%= f.label :fwd_to_email %><br>
+      <%= f.text_field :fwd_to_email %>
+    </div>
+    <div class="actions">
+      <%= f.submit :class => 'btn btn-default' %>
+    </div>
+  </form>
 <% end %>

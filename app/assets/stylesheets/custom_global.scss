@@ -11,13 +11,36 @@ body {
 }
 .btn-default:focus {
 /*  background-color: #000 !important;*/
-  color: #006633 !important;
+  color: gray !important;
 }
 .btn-default {
   background-color: #000 !important;
   border-color: gray !important;
   color: gray;
 }
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #000;
+  color: gray;
+}
+.table-hover tbody tr:hover td a, .table-hover tbody tr:hover th a {
+  color: gray;
+}
+
+
+.style1 {
+  // background-color: gray;
+  color: gray;
+}
+
+.style2 {
+  background-color: gray;
+  color: #000
+}
+.style2 a {
+  color: #000;
+}
+
 
 /* ================================================================= */
 /* Site Naviation */

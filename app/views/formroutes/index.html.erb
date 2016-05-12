@@ -1,13 +1,15 @@
 <!-- <p id="notice"><%#= notice %></p> -->
 
-<h1>Listing Formroutes</h1>
+<div class="container style2">
 
-<table>
+<h1>Form Routes</h1>
+
+<table class="table table-striped table-hover">
   <thead>
     <tr>
       <th>Name</th>
       <th>Key</th>
-      <th>Page</th>
+      <th>Site Page</th>
       <th>Fwd-To-Email</th>
       <th colspan="3"></th>
     </tr>
@@ -16,12 +18,10 @@
   <tbody>
     <% @formroutes.each do |formroute| %>
       <tr>
-        <td><%= formroute.name %></td>
+        <td><%= link_to "#{formroute.name}", formroute %></td>
         <td><%= formroute.key %></td>
-        <td><%= formroute.page %></td>
-        <td><%= formroute.fwd_to_email %></td>
-        <td><%= link_to 'Show', formroute %></td>
-        <td><%= link_to 'Edit', edit_formroute_path(formroute) %></td>
+        <td><%= link_to "#{formroute.page}", formroute %></td>
+        <td><%= link_to "#{formroute.fwd_to_email}", formroute %></td>
         <td><%= link_to 'Destroy', formroute, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -30,4 +30,6 @@
 
 <br>
 
-<%= link_to 'New Formroute', new_formroute_path %>
+<%= button_to('New Form Route', new_formroute_path, method: :get, :class => 'btn btn-default')  %>
+
+</div>

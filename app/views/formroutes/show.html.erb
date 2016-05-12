@@ -1,4 +1,5 @@
 <!-- <p id="notice"><%#= notice %></p> -->
+<div class="container style2">
 
 <p>
   <strong>Name:</strong>
@@ -20,5 +21,9 @@
   <%= @formroute.fwd_to_email %>
 </p>
 
-<%= link_to 'Edit', edit_formroute_path(@formroute) %> |
-<%= link_to 'Back', formroutes_path %>
+<div>
+  <%= button_to('Edit', edit_formroute_path(@formroute), method: :get, :class => 'btn btn-default', form: {style: "display:inline-block"})  %> | 
+  <%= button_to('Back', formroutes_path, method: :get, :class => 'btn btn-default', form: {style: "display:inline-block"})  %>
+</div>
+
+</div>

@@ -33,7 +33,7 @@ class Formroute < ActiveRecord::Base
           msg: params["message"])
 
       # Then forward message to email associated with form
-      FormMailer.new_email(formroute, amessage).deliver
+      FormMailer.new_email(formroute, amessage).deliver_now
       end
     else
       puts "Bad Request, No Matching Formroute"

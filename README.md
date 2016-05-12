@@ -12,15 +12,15 @@ Once you've got it up and running on your server, it's as easy as:
 2. Create a new formroute
 3. Then setup your form on your static website.  
 
-Example assuming your application is at `https://YourHerokuApp.com`, and your Formroute key is `123456`.
+    Example assuming your application is at `https://YourHerokuApp.com`, and your Formroute key is `123456`.
 
-    <form action="https://YourHerokuApp.com/form/123456">
-        <input type="text" name="name">
-        <input type="email" name="_replyto">
-        <input type="submit" value="Send">
-    </form>
+        <form action="https://YourHerokuApp.com/form/123456">
+            <input type="text" name="name">
+            <input type="email" name="_replyto">
+            <input type="submit" value="Send">
+        </form>
 
-Whenever someone submits the form, the message will be recorded in your database and forwarded to you as an email.
+4. Whenever someone submits the form, the message will be recorded in your database and forwarded to you as an email.
 
 ## Features
 
@@ -63,17 +63,17 @@ Your configuration will depend on your email host. Check out the Action Mailer C
 1. Create a .env file in your root directory
 2. Add .env to your .gitignore
 
-### Exmaple .env
+    ### Exmaple .env
 
-```bash
-# For Email Message
-EMAIL_HOST="example.com"
-EMAIL_ADDRESS="smtp.email.com"
-EMAIL_DOMAIN="example.com"
-EMAIL_USERNAME="username"
-EMAIL_PASSWORD="password"
-EMAIL_AUTHENTICATION=plain
-```
+    ```bash
+    # For Email Message
+    EMAIL_HOST="example.com"
+    EMAIL_ADDRESS="smtp.email.com"
+    EMAIL_DOMAIN="example.com"
+    EMAIL_USERNAME="username"
+    EMAIL_PASSWORD="password"
+    EMAIL_AUTHENTICATION=plain
+    ```
 
 3. Create the above variables in your heroku Config Variables.
 
@@ -81,27 +81,28 @@ EMAIL_AUTHENTICATION=plain
 
 ### Example `development.rb`:
 
-```bash
-...
-  # Mail logging and other settings
-  config.action_mailer.default_url_options = { :host => "localhost:3000" }
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.delivery_method = :smtp
+    ```bash
+    ...
+      # Mail logging and other settings
+      config.action_mailer.default_url_options = { :host => "localhost:3000" }
+      config.action_mailer.perform_deliveries = true
+      config.action_mailer.raise_delivery_errors = true
+      config.action_mailer.delivery_method = :smtp
 
-  # Email Message
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address:              ENV['EMAIL_ADDRESS'],
-    port:                 80,
-    domain:               ENV['EMAIL_DOMAIN'],
-    user_name:            ENV['EMAIL_USERNAME'],
-    password:             ENV['EMAIL_PASSWORD'],
-    authentication:       ENV['EMAIL_AUTHENTICATION'],
-    enable_starttls_auto: true,
-    tls:                  true }
-...
-```
+      # Email Message
+      config.action_mailer.delivery_method = :smtp
+      config.action_mailer.smtp_settings = {
+        address:              ENV['EMAIL_ADDRESS'],
+        port:                 80,
+        domain:               ENV['EMAIL_DOMAIN'],
+        user_name:            ENV['EMAIL_USERNAME'],
+        password:             ENV['EMAIL_PASSWORD'],
+        authentication:       ENV['EMAIL_AUTHENTICATION'],
+        enable_starttls_auto: true,
+        tls:                  true }
+    ...
+    ```
+
 
 ### Example `production.rb`:
 

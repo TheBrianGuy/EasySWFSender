@@ -21,7 +21,8 @@ class Formroute < ActiveRecord::Base
     current_uri_key = request.env["action_dispatch.request.path_parameters"][:key]
     formroute = Formroute.find_by(key: current_uri_key)
     if formroute != nil
-      if emptyTag(params, request) == true && authenticateSource(formroute, request) == true    
+      if emptyTag(params, request) == true && authenticateSource(formroute, request) == true 
+      # Save message to db 
       amessage = Message.create(
           fwd_msg_to: formroute[:fwd_to_email], 
           msg_from_site: request.referrer, 
@@ -31,10 +32,8 @@ class Formroute < ActiveRecord::Base
           msg_subject: params["_subject"], 
           msg: params["message"])
 
-      # then forward message to email associated with form
+      # Then forward message to email associated with form
       FormMailer.new_email(formroute, amessage)
-      
-
       end
     else
       puts "Bad Request, No Matching Formroute"

@@ -100,8 +100,7 @@ Your configuration will depend on your email host. Check out the Action Mailer C
         user_name:            ENV['EMAIL_USERNAME'],
         password:             ENV['EMAIL_PASSWORD'],
         authentication:       ENV['EMAIL_AUTHENTICATION'],
-        enable_starttls_auto: true,
-        tls:                  true }
+        enable_starttls_auto: true }
     ...
     ```
 

@@ -26,6 +26,7 @@ Once you've got it up and running on your server, it's as easy as:
 
 * Messages hosted on your server, manage your own database
 * Unlimited messages
+* Make custom forms for your static websites without writing server side code
 * Use with multiple static websites
 * Easily add and remove Formroutes
 * Easy to follow code for upgrading or customizing
@@ -95,7 +96,7 @@ Your configuration will depend on your email host. Check out the Action Mailer C
       config.action_mailer.delivery_method = :smtp
       config.action_mailer.smtp_settings = {
         address:              ENV['EMAIL_ADDRESS'],
-        port:                 80,
+        port:                 465,
         domain:               ENV['EMAIL_DOMAIN'],
         user_name:            ENV['EMAIL_USERNAME'],
         password:             ENV['EMAIL_PASSWORD'],
@@ -114,7 +115,7 @@ Your configuration will depend on your email host. Check out the Action Mailer C
       config.action_mailer.delivery_method = :smtp
       config.action_mailer.smtp_settings = {
         address:              ENV['EMAIL_ADDRESS'],
-        port:                 25,
+        port:                 465,
         domain:               ENV['EMAIL_DOMAIN'],
         user_name:            ENV['EMAIL_USERNAME'],
         password:             ENV['EMAIL_PASSWORD'],

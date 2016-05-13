@@ -29,6 +29,7 @@ Once you've got it up and running on your server, it's as easy as:
 * Make custom forms for your static websites without writing server side code
 * Use with multiple static websites
 * Easily add and remove Formroutes
+* Formroutes use an auto-generated unique key instead of email for added security
 * Easy to follow code for upgrading or customizing
 
 ## Pic's

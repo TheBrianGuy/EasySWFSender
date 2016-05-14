@@ -4,7 +4,7 @@
 
 ## Overview
 
-Host your own form sender for all your static websites with EasyStaticWebsiteFormSender. Fork this app and upload to Heroku and you'll have a form sender that you can use with all your static websites. 
+Host your own form sender for all your static websites with EasySWFSender (Easy-Static-Website-Form-Sender). Fork this app and upload to Heroku and you'll have a form sender that you can use with all your static websites. 
 
 Once you've got it up and running on your server, it's as easy as:
 

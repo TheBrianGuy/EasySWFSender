@@ -1,7 +1,10 @@
 class Formroute < ActiveRecord::Base
   belongs_to :user
-  validates :name, length: { minimum: 3 }
+  validates :name, length: { minimum: 3, maximum: 15 }
   validates :name, presence: true
+  validates :page, presence: true
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :fwd_to_email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }
 
   before_create :generateKey
 

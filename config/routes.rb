@@ -5,8 +5,7 @@ Rails.application.routes.draw do
   resources :messages, :only => [:index, :show, :destroy]
 
   # Route with key
-  match '/form/:key', to: 'formroutes#newhttp', via: [:get]
-
+  match '/form/:key', to: 'formroutes#newhttp', via: [:post]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

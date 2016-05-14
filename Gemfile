@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# allows web applications to make cross domain AJAX calls without using workarounds such as JSONP
+gem 'rack-cors', :require => 'rack/cors'
+
 # Shim to load environment variables from .env into ENV in development.
 gem 'dotenv-rails', :groups => [:development, :test]
 

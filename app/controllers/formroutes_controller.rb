@@ -1,9 +1,22 @@
 class FormroutesController < ApplicationController
   before_action :set_formroute, only: [:show, :edit, :update, :destroy]
+  rescue_from ActionController::RoutingError, with: :newhttp
+
+  # handles 422 (Unprocessable Entity)
+  skip_before_filter :verify_authenticity_token, only: [:newhttp]
 
   def newhttp
-    Formroute.authenticateMessage(request, params)
-    render nothing: true
+    begin
+      data, errors = Formroute.authenticateMessage(request, params)
+    rescue => e
+      render status: 500, json: {"codeErrors": ["Code error, Check Server Logs", "#{e}"]}
+    else
+      if errors[:codeErrors].size == 0 
+        render status: 200, json: errors
+      else
+        render status: 400, json: errors
+      end
+    end
   end
 
   # GET /formroutes

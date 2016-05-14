@@ -3,40 +3,41 @@
 <div class="container style2">
 
 <p>
-  <strong>Fwd msg to:</strong>
+  <strong>Forward to:</strong>
   <%= @message.fwd_msg_to %>
 </p>
 
 <p>
-  <strong>Msg from site:</strong>
+  <strong>Origin:</strong>
   <%= @message.msg_from_site %>
 </p>
 
 <p>
-  <strong>Msg from email:</strong>
-  <%= @message.msg_from_email %>
-</p>
-
-<p>
-  <strong>Msg from name:</strong>
-  <%= @message.msg_from_name %>
-</p>
-
-<p>
-  <strong>Msg from ipaddress:</strong>
+  <strong>IPAddress:</strong>
   <%= @message.msg_from_ipaddress %>
 </p>
 
 <p>
-  <strong>Msg subject:</strong>
+  <strong>Subject:</strong>
   <%= @message.msg_subject %>
 </p>
 
 <p>
-  <strong>Msg:</strong>
+  <strong>From email:</strong>
+  <%= @message.msg_from_email %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @message.msg_from_name %>
+</p>
+
+<p>
+  <strong>Message:</strong>
   <%= @message.msg %>
 </p>
 
-<%= button_to('Back', messages_path, method: :get, :class => 'btn btn-default')  %>
+<%= button_to('Back', messages_path, method: :get, :class => 'btn btn-default', form: {style: "display:inline-block"})  %> | 
+<td><%= button_to('Destroy', message_path, method: :delete, :class => 'btn btn-default', data: { confirm: 'Are you sure?' }, form: {style: "display:inline-block"}) %></td>
 
 </div>

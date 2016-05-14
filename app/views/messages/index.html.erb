@@ -10,8 +10,8 @@
       <th>Date-Time</th>
       <th>Fwd msg to</th>
       <th>Origin</th>
-      <th>Msg from email</th>
       <th>IPAddress</th>
+      <th>Msg from email</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,8 +22,8 @@
         <td><%= link_to "#{message.created_at.strftime("%a %B %d %Y at %I:%M %P %Z")}", message %></td>
         <td><%= link_to "#{message.fwd_msg_to}", message %></td>
         <td><%= link_to "#{message.msg_from_site}", message %></td>
-        <td><%= link_to "#{message.msg_from_email}", message %></td>
         <td><%= link_to "#{message.msg_from_ipaddress}", message %></td>
+        <td><%= link_to "#{message.msg_from_email}", message %></td>
         <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

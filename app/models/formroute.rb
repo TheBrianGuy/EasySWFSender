@@ -36,15 +36,6 @@ class Formroute < ActiveRecord::Base
         amessage = self.compileMessage(formroute, request, params)
         # Then forward message to email associated with form
         self.deliverMsg(formroute, amessage)
-        # true
-
-
-
-
-
-        # byebug
-        # @e = {"codeErrors": []}
-
       end
     else
       puts @e[:codeErrors].push("Bad Request, No Matching Formroute")

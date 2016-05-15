@@ -1,5 +1,14 @@
 source 'https://rubygems.org'
 
+# Abort requests that are taking too long; an exception is raised.
+gem "rack-timeout"
+
+# Production web server
+# Check for thread safety, currently setwith:
+# heroku config:set MIN_THREADS=2 RAILS_MAX_THREADS=2
+# https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server
+gem 'puma'
+
 # allows web applications to make cross domain AJAX calls without using workarounds such as JSONP
 gem 'rack-cors', :require => 'rack/cors'
 

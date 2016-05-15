@@ -6,17 +6,8 @@ class FormroutesController < ApplicationController
   skip_before_filter :verify_authenticity_token, only: [:newhttp]
 
   def newhttp
-    begin
-      data, errors = Formroute.authenticateMessage(request, params)
-    rescue => e
-      render status: 500, json: {"codeErrors": ["Code error, Check Server Logs", "#{e}"]}
-    else
-      if errors[:codeErrors].size == 0 
-        render status: 200, json: errors
-      else
-        render status: 400, json: errors
-      end
-    end
+    data, errors, statusCode = Formroute.authenticateMessage(request, params)
+    render status: statusCode, json: errors
   end
 
   # GET /formroutes

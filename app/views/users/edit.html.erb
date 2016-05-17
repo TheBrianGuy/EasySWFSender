@@ -1,6 +1,12 @@
-<h1>Editing User</h1>
+<div class="container form-session">
 
-<%= render 'form' %>
+  <h1>Edit Account</h1>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+  <%= render 'form' %>
+
+
+  <div>
+    <%= button_to('Back', users_path, method: :get, :class => 'btn btn-default', form: {style: "display:inline-block"})  %>
+  </div>
+
+</div>

@@ -1,33 +1,24 @@
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<%= bootstrap_form_for(@user) do |f| %>
 
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+    <%= f.text_field :name, placeholder: "Your Name", autofocus: true %>
+    <%= f.email_field :email, placeholder: "Email" %>
+    <%= f.submit "Update", class: "btn btn-default form-btn" %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :password_confirmation %><br>
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
+
+
+<%= bootstrap_form_for(@user) do |f| %>
+
+    <h3>Update Password</h3>
+    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.password_field :password, placeholder: "Password", skip_label: true, autocomplete: "off" %>
+    <%= f.password_field :password_confirmation, placeholder: "Password", autocomplete: "off" %>
+    <%= f.submit "Update Password", class: "btn btn-default form-btn" %>
+
+<% end %>
+
+  <h3>Cancel my account</h3>
+
+  <%= button_to "Delete my account", @user, method: :delete, data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger form-btn" %><br>
+
+<br>

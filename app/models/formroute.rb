@@ -2,7 +2,7 @@ class Formroute < ActiveRecord::Base
   belongs_to :user
 
   VALID_NAME_REGEX = /\A[a-zA-Z\s]+\z/ #Any letter or whitespace
-  VALID_URL_REGEX = /Ahttps?:\/\/[\S]+z/
+  VALID_URL_REGEX = /\A#{URI::regexp(['http', 'https'])}\z/
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
   validates :name, length: { minimum: 3, maximum: 15 }

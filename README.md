@@ -1,6 +1,7 @@
 ## Status
 
 ...in progress
+...To-Do: fix formroute sending email in error, add validations for messages, and formroutes, update other form view styles to match style used for devise, remove extra files and methods in user class, check security of cors method used, move setup and faq to wiki...
 
 ## Overview
 
@@ -77,6 +78,8 @@ Your configuration will depend on your email host. Check out the Action Mailer C
     EMAIL_USERNAME="username"
     EMAIL_PASSWORD="password"
     EMAIL_AUTHENTICATION=plain
+    # Devise config.mailer_sender
+    APP_NAMED_EMAIL="EasySWFSender-noreply@example.com"
     ```
 
 4. Create the above variables in your heroku Config Variables.

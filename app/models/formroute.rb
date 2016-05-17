@@ -75,7 +75,8 @@ class Formroute < ActiveRecord::Base
       msg_from_name: params["name"],
       msg_from_ipaddress: request.remote_ip, 
       msg_subject: params["_subject"], 
-      msg: params["message"])
+      msg: params["message"],
+      formroute_id: formroute[:id])
     begin
       # Save message to db
       amessage.save!
@@ -99,5 +100,9 @@ class Formroute < ActiveRecord::Base
     end
     true
   end
-        
+
+  def self.totalmessages(formroute_id)
+    Message.where(formroute_id: formroute_id).count
+  end 
+
 end

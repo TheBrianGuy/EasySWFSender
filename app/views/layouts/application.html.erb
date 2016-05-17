@@ -12,13 +12,22 @@
 
   <%= render 'layouts/header' %>
 
+  <%= render 'layouts/greeting' %>
+
   <div class="container style1">
 
-    <% flash.each do |message_type, message| %>
-      <div class="alert alert-<%= message_type %>"><%= message %></div>
-    <% end %>
 
-   <%= yield %>
+  <% flash.each do |name, msg| %>
+    <% if msg.is_a?(String) %>
+      <div align="center" class="alert alert-<%= name.to_s == 'notice' ? 'success' : 'danger' %>">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      </div>
+    <% end %>
+  <% end %>
+
+  <%= yield %>
+  
   </div>
 
 

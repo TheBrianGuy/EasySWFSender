@@ -1,10 +1,15 @@
 class MessagesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_message, only: [:show, :destroy]
 
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.all.reverse_order
+    route_ids = Formroute.where(user_id: current_user).map {|route| route.id}
+    allMessages = Message.where(formroute_id: route_ids).reverse_order
+    routeMessages =  Message.where(formroute_id: params[:formroute_id]).reverse_order
+
+    params[:formroute_id] == nil ? @messages = allMessages : @messages = routeMessages
   end
 
   # GET /messages/1

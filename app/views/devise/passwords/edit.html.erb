@@ -1,0 +1,22 @@
+<div class="container form-session">
+  <h2>Change your password</h2>
+
+  <%= bootstrap_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+    <%#= devise_error_messages! %>
+    <%= f.hidden_field :reset_password_token %>
+
+    <%= f.label :password, "New password" %><br />
+    <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+    <% end %>
+    <%= f.password_field :password, placeholder: "Password", skip_label: true, required: true, autocomplete: "off" %>
+    <%= f.label :password_confirmation, "Confirm new password" %><br />
+    <%= f.password_field :password_confirmation, placeholder: "Password", skip_label: true, required: true, autocomplete: "off" %>
+    <%= f.submit "Change my password", class: "btn btn-default form-btn" %>
+  <% end %>
+
+  <hr>
+  <%= render "devise/shared/links" %>
+  <hr>
+  
+</div>

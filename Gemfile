@@ -1,11 +1,17 @@
 source 'https://rubygems.org'
 
+# rails form builder that makes it super easy to integrate twitter bootstrap-style forms
+gem 'bootstrap_form'
+
+# Authentication
+gem 'devise'
+
 # Abort requests that are taking too long; an exception is raised.
 gem "rack-timeout"
 
 # Production web server
-# Check for thread safety, currently setwith:
-# heroku config:set MIN_THREADS=2 RAILS_MAX_THREADS=2
+# Check for thread safety after making changes or adding gems. Use:
+# heroku config:set MIN_THREADS=1 RAILS_MAX_THREADS=1, and scale up after logs confirm no issues
 # https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server
 gem 'puma'
 

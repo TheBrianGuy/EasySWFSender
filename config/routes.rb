@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'pages#home'
   get    'signup'  => 'users#new'
-  resources :formroutes, :users
+  resources :formroutes
   resources :messages, :only => [:index, :show, :destroy]
 
   # Route with key

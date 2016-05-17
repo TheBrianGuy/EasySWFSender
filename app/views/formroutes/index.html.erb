@@ -11,6 +11,7 @@
       <th>Key</th>
       <th>Site Page</th>
       <th>Fwd-To-Email</th>
+      <th>View Messages</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,6 +23,7 @@
         <td><%= formroute.key %></td>
         <td><%= link_to "#{formroute.page}", formroute %></td>
         <td><%= link_to "#{formroute.fwd_to_email}", formroute %></td>
+        <td><%= link_to "#{pluralize(Formroute.totalmessages(formroute.id), 'Message')}", messages_path(formroute_id: formroute.id) %></td>
         <td><%= link_to 'Destroy', formroute, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

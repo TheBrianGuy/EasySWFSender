@@ -1,4 +1,5 @@
 class FormroutesController < ApplicationController
+  before_action :authenticate_user!, except: [:newhttp]
   before_action :set_formroute, only: [:show, :edit, :update, :destroy]
   rescue_from ActionController::RoutingError, with: :newhttp
 
@@ -13,7 +14,7 @@ class FormroutesController < ApplicationController
   # GET /formroutes
   # GET /formroutes.json
   def index
-    @formroutes = Formroute.all
+    @formroutes = current_user.formroutes
   end
 
   # GET /formroutes/1
@@ -23,7 +24,7 @@ class FormroutesController < ApplicationController
 
   # GET /formroutes/new
   def new
-    @formroute = Formroute.new
+    @formroute = current_user.formroutes.build
   end
 
   # GET /formroutes/1/edit
@@ -33,7 +34,7 @@ class FormroutesController < ApplicationController
   # POST /formroutes
   # POST /formroutes.json
   def create
-    @formroute = Formroute.new(formroute_params)
+    @formroute = current_user.formroutes.build(formroute_params)
 
     respond_to do |format|
       if @formroute.save
@@ -73,7 +74,7 @@ class FormroutesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_formroute
-      @formroute = Formroute.find(params[:id])
+      @formroute = current_user.formroutes.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

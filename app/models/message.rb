@@ -1,4 +1,5 @@
 class Message < ActiveRecord::Base
+  belongs_to :formroute
   validates :msg, length: { minimum: 10 }
   validates :msg_from_name, presence: true, length: { minimum: 3 }
   # validates :page, presence: true

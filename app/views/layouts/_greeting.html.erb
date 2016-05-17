@@ -1,0 +1,20 @@
+<!-- This is to show you can use cdn with rails -->
+<%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js" %>
+
+<div class="container-fluid greeting">
+  <% if user_signed_in? %> 
+    <%= "#{timeOfDay} #{current_user.name}, " %>
+    <span id="time"></span>
+  <% end %>
+</div>
+
+<script type="text/javascript">
+
+  (function update_time(){
+    var now = moment().format("MMMM Do, YYYY, h:mm:ss A");
+    // June 9th, 2007, 5:46:21 PM
+    $('#time').text(now);
+    setTimeout(update_time, 1000);
+  })();
+
+</script>

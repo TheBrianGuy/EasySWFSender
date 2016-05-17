@@ -1,31 +1,10 @@
-<%= form_for(@formroute) do |f| %>
-  <% if @formroute.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@formroute.errors.count, "error") %> prohibited this formroute from being saved:</h2>
+<%= bootstrap_form_for(@formroute) do |f| %>
 
-      <ul>
-      <% @formroute.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= f.text_field :name, placeholder: "Form Name", required: true, autofocus: true %>
+  <%= f.label "Site Page" %><br>
+  <%= f.text_field :page, placeholder: "https://example.com/contact", skip_label: true, required: true %>
+  <%= f.text_field :fwd_to_email, placeholder: "support@example.com", required: true %>
+  <%= f.submit "Update Form Route", class: "btn btn-default form-btn" %>
 
-  <form role="form">
-    <div class="field form-group">
-      <%= f.label :name %><br>
-      <%= f.text_field :name %>
-    </div>
-    <div class="field form-group">
-      <%= f.label "Site Page" %><br>
-      <%= f.text_field :page %>
-    </div>
-    <div class="field form-group">
-      <%= f.label :fwd_to_email %><br>
-      <%= f.text_field :fwd_to_email %>
-    </div>
-    <div class="actions">
-      <%= f.submit :class => 'btn btn-default' %>
-    </div>
-  </form>
 <% end %>
+<br>

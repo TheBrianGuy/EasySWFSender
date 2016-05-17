@@ -72,7 +72,7 @@ Your configuration will depend on your email host. Check out the Action Mailer C
     ```bash
     # For Email Message
     EMAIL_DEFAULT_FROM="from@example.com"
-    EMAIL_HOST="example.com"
+    EMAIL_HOST="example.com" # In production will be root url for devise messages
     EMAIL_ADDRESS="smtp.email.com"
     EMAIL_DOMAIN="example.com"
     EMAIL_USERNAME="username"

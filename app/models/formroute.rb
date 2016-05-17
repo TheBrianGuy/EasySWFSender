@@ -35,7 +35,7 @@ class Formroute < ActiveRecord::Base
         # Save message to db 
         amessage = self.compileMessage(formroute, request, params)
         # Then forward message to email associated with form
-        self.deliverMsg(formroute, amessage)
+        self.deliverMsg(formroute, amessage) unless amessage == false
       end
     else
       puts @e[:codeErrors].push("Bad Request, No Matching Formroute")
@@ -60,31 +60,36 @@ class Formroute < ActiveRecord::Base
     if params["_gotcha"].empty? == true
       true
     else
-      puts @e[:codeErrors].push("Bad params, check logs")
-      puts "The ip the message came from is #{request.remote_ip}"
-      @statusCode = 400
+      # puts @e[:codeErrors].push("Bad params, check logs")
+      puts "Bad params from IP Address: #{request.remote_ip}"
+      puts "Bad params, Came from: #{request.referrer}"
+      # @statusCode = 400
+      
+      # Silently ignore
+      false
     end
   end
 
 
   def self.compileMessage(formroute, request, params)
-    amessage = Message.new(
-      fwd_msg_to: formroute[:fwd_to_email], 
-      msg_from_site: request.referrer, 
-      msg_from_email: params["email"], 
-      msg_from_name: params["name"],
-      msg_from_ipaddress: request.remote_ip, 
-      msg_subject: params["_subject"], 
-      msg: params["message"],
-      formroute_id: formroute[:id])
     begin
       # Save message to db
+      amessage = Message.new(
+        fwd_msg_to: formroute[:fwd_to_email], 
+        msg_from_site: request.referrer, 
+        msg_from_email: params["email"], 
+        msg_from_name: params["name"],
+        msg_from_ipaddress: request.remote_ip, 
+        msg_subject: params["_subject"], 
+        msg: params["message"],
+        formroute_id: formroute[:id])
       amessage.save!
     rescue ActiveRecord::RecordInvalid => e
       # push e into hash and set statusCode
       @e[:codeErrors].push("Message input not valid")
       e.record.errors.messages.each { |key, value| @e[:codeErrors].push("#{key} #{value[0]}") }
       @statusCode = 422
+      amessage = false
     end
     amessage
   end

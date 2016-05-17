@@ -8,6 +8,7 @@ class FormroutesController < ApplicationController
 
   def newhttp
     data, errors, statusCode = Formroute.authenticateMessage(request, params)
+    errors = Formroute.changeValidationAttrNames(errors)
     render status: statusCode, json: errors
   end
 

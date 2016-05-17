@@ -5,7 +5,7 @@ class Formroute < ActiveRecord::Base
   VALID_URL_REGEX = /\A#{URI::regexp(['http', 'https'])}\z/
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
-  validates :name, length: { minimum: 3, maximum: 15 }
+  validates :name, length: { minimum: 3, maximum: 20 }
   validates :name, presence: true, format: { with: VALID_NAME_REGEX }
   validates :page, presence: true, format: { with: VALID_URL_REGEX }
   validates :fwd_to_email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }
@@ -113,5 +113,20 @@ class Formroute < ActiveRecord::Base
   def self.totalmessages(formroute_id)
     Message.where(formroute_id: formroute_id).count
   end 
+
+  def self.changeValidationAttrNames(errors)
+    # Change attribute names on form Validations
+    if errors[:codeErrors].size !=0
+      errors[:codeErrors].each do |text| 
+        text.sub! 'msg_from_site', 'Form Origin'
+        text.sub! 'msg_from_email', 'Your Email'
+        text.sub! 'msg_from_name', 'Your Name'
+        text.sub! 'msg_from_ipaddress', 'IP Error'
+        text.sub! 'msg_subject', 'Subject'
+        text.sub! 'msg', 'Your Message'
+      end
+    end
+    errors
+  end
 
 end

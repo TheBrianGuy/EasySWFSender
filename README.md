@@ -1,7 +1,8 @@
 ## Status
 
 ...in progress
-...To-Do: fix formroute sending email in error, add validations for messages, and formroutes, update other form view styles to match style used for devise, remove extra files and methods in user class, check security of cors method used, move setup and faq to wiki...
+...production ready but consider improving message validation 
+...To-Do: remove extra files and methods in user class, move setup and faq to wiki...
 
 ## Overview
 

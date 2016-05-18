@@ -154,7 +154,7 @@ Your configuration will depend on your email host. Check out the Action Mailer C
 * <a href="http://jtlindsey.com/" target="_blank">jtlindsey.com</a>
 * <a href="https://github.com/jtlindsey" target="_blank">jtlindsey github</a>
 
-This app was Inspired by <a href="https://github.com/formspree/formspree" target="_blank">formspree</a>. But this: is 100% free, has unlimited messages and forms hosted on your server, has complete setup documentation for hosting on Heroku free dyno server, and is built with Ruby on Rails.
+This app was Inspired by <a href="https://github.com/formspree/formspree" target="_blank">formspree</a>. But this is 100% free, has unlimited messages and forms hosted on your server, has complete setup documentation for hosting on Heroku free dyno server, and is built with Ruby on Rails.
 
 ## License
 

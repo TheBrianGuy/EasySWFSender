@@ -123,7 +123,6 @@ Your configuration will depend on your email host. Check out the Action Mailer C
     ...
     ```
 
-
     ### Example `production.rb`:
 
     ```bash
@@ -143,9 +142,10 @@ Your configuration will depend on your email host. Check out the Action Mailer C
     ...
     ```
 
+
 ## Form Setup
 
-
+...coming soon with html and ajax example
 
 ## Creators
 

@@ -26,13 +26,25 @@ Once you've got it up and running on your server, it's as easy as:
 
 ## Features
 
-* Messages hosted on your server, manage your own database
+### Privacy & Security
+
+* Formroutes use an auto-generated unique key instead of email for added security. Now you can hide your email address from your form.
+* Even with open-source projects you have no idea if the changes you see on github are the same as what's on the application server for the public application. Especially on multi user public applications. Email addresses could silently be used to create list based on messages and then resold. Protect your senders email and messages by sending them to your own server. 
+* Anti-spam "honeypot" field to prevent spam from bots. The server will ignore the submission if field is not blank.
+
+        <input type="text" name="funText" style="display:none" />
+
+### Other Features
+
+* Messages stored on your server. Missed a message? Login to your app and get it!
 * Unlimited messages
-* Make custom forms for your static websites without writing server side code
+* Easily add forms to your static websites without writing server-side code
 * Use with multiple static websites
 * Easily add and remove Formroutes
-* Formroutes use an auto-generated unique key instead of email for added security
 * Easy to follow code for upgrading or customizing
+* Easily manage auto deleting old messages (coming soon)
+* Download 1 or all messages from your application (coming soon)
+* Form creation check box to enable plain-text or html(default) forwarding (coming soon)
 
 ## Pic's
 
@@ -40,7 +52,8 @@ Once you've got it up and running on your server, it's as easy as:
 
 ## Documentation & Usage
 
-...coming soon
+...coming soon  
+...simple instructions for adding additional fields to site forms and application processing also coming soon.
 
 ## Installation
 
@@ -73,7 +86,7 @@ Your configuration will depend on your email host. Check out the Action Mailer C
     ```bash
     # For Email Message
     EMAIL_DEFAULT_FROM="from@example.com"
-    EMAIL_HOST="example.com" # In production will be root url for devise messages
+    EMAIL_HOST="example.com" # In production will be root url for devise links
     EMAIL_ADDRESS="smtp.email.com"
     EMAIL_DOMAIN="example.com"
     EMAIL_USERNAME="username"
@@ -129,6 +142,10 @@ Your configuration will depend on your email host. Check out the Action Mailer C
         tls:                  true }
     ...
     ```
+
+## Form Setup
+
+
 
 ## Creators
 

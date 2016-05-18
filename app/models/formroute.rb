@@ -61,7 +61,7 @@ class Formroute < ActiveRecord::Base
   end
 
   def self.emptyTag(params, request)
-    if params["_gotcha"].empty? == true
+    if params["funText"].empty? == true
       true
     else
       # puts @e[:codeErrors].push("Bad params, check logs")
@@ -84,7 +84,7 @@ class Formroute < ActiveRecord::Base
         msg_from_email: params["email"], 
         msg_from_name: params["name"],
         msg_from_ipaddress: request.remote_ip, 
-        msg_subject: params["_subject"], 
+        msg_subject: params["subject"], 
         msg: params["message"],
         formroute_id: formroute[:id])
       amessage.save!

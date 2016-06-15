@@ -60,6 +60,8 @@ Once you've got it up and running on your server, it's as easy as:
 
 ![alt text](https://raw.githubusercontent.com/jtlindsey/DemoPics/master/EasySWFSender_Rails/5.png "Edit Account")
 
+**Example on a static website**
+
 ![alt text](https://raw.githubusercontent.com/jtlindsey/DemoPics/master/EasySWFSender_Rails/example_static_site.png "Example static site")
 
 ## Documentation & Usage

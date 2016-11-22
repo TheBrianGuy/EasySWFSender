@@ -19,7 +19,7 @@
 .byebug_history
 
 # Ignore .env
-.env
+*.env
 
 # Ignore swap files
-.swp
+*.swp
